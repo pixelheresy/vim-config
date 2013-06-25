@@ -59,4 +59,5 @@ filetype plugin indent on
 
 let g:Powerline_symbols = 'unicode'
 let g:vim_markdown_folding_disabled=1
+au BufReadCmd   *.epub      call zip#Browse(expand("<amatch>"))
 
