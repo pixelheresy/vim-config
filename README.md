@@ -4,18 +4,15 @@ pixelheresy's vim config of doom
 Installation
 ------------
 
-- Pull down this repo to .vim [back up your old stuff if needed]
+- Pull down this repo to .vim [back up your old stuff if needed]. _This will
+also pull down submodules._
 
 	cd ~
-	$ git clone https://github.com/pixelheresy/vim-config.git .vim
+	$ git clone --recursive https://github.com/pixelheresy/vim-config.git .vim
 
 - Create a symbolic link for the `.vimrc` to your `$HOME`
 
 	ln -s ~/.vim/.vimrc ~/.vimrc
-
-- Snatch external repo [just vundle; it brings in the rest]
-
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 - Update Bundles
 
@@ -30,4 +27,17 @@ Included Plugins
 ---------------
 
 [*more info and links coming soon*]
+
+https://github.com/marik/vundle
+
+https://github.com/Lokaltog/vim-powerline'
+
+https://github.com/tpope/vim-fugitive
+
+https://github.com/kien/ctrlp.vim
+
+https://github.com/msanders/snipmate.vim
+
+https://github.com/plasticboy/vim-markdown
+
 

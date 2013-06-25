@@ -35,6 +35,7 @@ set t_Co=256
 set mouse=a
 set number
 filetype off
+xnoremap p pgvy		
 
 " set backspace=indent,eol,start 
 set rtp+=~/.vim/bundle/vundle/
@@ -52,6 +53,10 @@ Bundle 'kien/ctrlp.vim.git'
 
 Bundle 'msanders/snipmate.vim.git'
 
+Bundle 'plasticboy/vim-markdown.git'
+
 filetype plugin indent on
 
 let g:Powerline_symbols = 'unicode'
+let g:vim_markdown_folding_disabled=1
+
