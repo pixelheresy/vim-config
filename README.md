@@ -13,6 +13,19 @@ Installation
 
 	ln -s ~/.vim/.vimrc ~/.vimrc
 
+- Snatch external repos
+
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+	
+- Run :helptags for CtrlP
+
+	vim -c ':helptags ~/.vim/bundle/ctrlp.vim/doc'
+
+- Update Bundles
+
+	:BundleInstall
+
 - Enjoy!
 
 This is really just designed for me and aiding in learning `vim`, but feel from
