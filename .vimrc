@@ -48,6 +48,10 @@ Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'tpope/vim-fugitive.git'
 
+Bundle 'kien/ctrlp.vim.git'
+
+Bundle 'msanders/snipmate.vim.git'
+
 filetype plugin indent on
 
 let g:Powerline_symbols = 'unicode'
