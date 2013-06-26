@@ -32,7 +32,7 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=256
 
-set mouse=a
+" set mouse=a
 set number
 filetype off
 xnoremap p pgvy		
@@ -44,16 +44,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
 Bundle 'Lokaltog/vim-powerline'
-
 Bundle 'tpope/vim-fugitive.git'
-
 Bundle 'kien/ctrlp.vim.git'
-
 Bundle 'msanders/snipmate.vim.git'
-
 Bundle 'plasticboy/vim-markdown.git'
+Bundle 'sjl/threesome.vim.git'
 
 filetype plugin indent on
 
