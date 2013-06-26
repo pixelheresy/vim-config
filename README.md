@@ -20,8 +20,11 @@ also pull down submodules._
 
 - Enjoy!
 
-This is really just designed for me and aiding in learning `vim`, but feel from
-to use this if you like. It will no doubt expand as time goes on.
+This is really just designed for me and aiding in learning `vim`, but feel free to use this if you like. It will no doubt expand as time goes on.
+
+Any questions or suggestions?
+
+	keith [dot] gibbs [at] me [dot] com
 
 Included Plugins
 ---------------
