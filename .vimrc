@@ -29,7 +29,7 @@ set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set fileformat=unix	" No crazy CR/LF
-set foldcolumn=4 " Column to show folds
+set foldcolumn=1 " Column to show folds
 set foldenable
 set foldlevel=2
 set foldmethod=syntax " Markers are used to specify folds.
@@ -128,9 +128,6 @@ noremap <leader>W :w !sudo tee %<CR>
 
 " Get output of shell commands
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
-
-" Remap :W to :w
-command W w
 
 " Better mark jumping (line + col)
 nnoremap ' `
