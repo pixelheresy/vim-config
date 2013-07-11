@@ -3,7 +3,7 @@ set nocompatible
 
 " Set syntax highlighting options.
 set t_Co=256
-set background=dark 
+set background=dark
 syntax on
 colorscheme molokai
 
@@ -220,5 +220,5 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-
-
+set list                " show special characters
+set listchars=tab:»\ ,trail:·,nbsp:·,eol:¸
