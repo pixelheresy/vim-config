@@ -11,7 +11,7 @@ colorscheme molokai
 filetype off
 
 " Change mapleader
-let mapleader=","
+" let mapleader=","
 
 " Local dirs
 set backupdir=~/.vim/backups
@@ -140,7 +140,6 @@ imap VV ↓
 imap aa λ
 
 " Toggle show tabs and trailing spaces (,c)
-set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>c :set nolist!<CR>
 
@@ -175,6 +174,9 @@ map <leader><Enter> o<ESC>
 
 " Search and replace word under cursor (,*)
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
+
+" Remap ^A to ^S for adding
+nnoremap <C-s> <C-a>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
@@ -221,4 +223,4 @@ autocmd BufReadPost *
   \ endif
 
 set list                " show special characters
-set listchars=tab:»\ ,trail:·,nbsp:·,eol:¸
+set listchars=tab:»·,trail:·,nbsp:·,eol:¸
