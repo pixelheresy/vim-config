@@ -91,6 +91,7 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'msanders/snipmate.vim.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'sjl/threesome.vim.git'
+Bundle 'mklabs/grunt.vim.git'
 
 filetype plugin indent on
 
@@ -175,8 +176,8 @@ map <leader><Enter> o<ESC>
 " Search and replace word under cursor (,*)
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
-" Remap ^A to ^S for adding
-nnoremap <C-s> <C-a>
+" Remap ^A to ^K for adding
+map <C-k> <C-a>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
