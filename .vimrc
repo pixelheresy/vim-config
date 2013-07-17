@@ -63,7 +63,7 @@ set smartcase " Ignore 'ignorecase' if search patter contains uppercase characte
 set smartindent		" Indent settings (really only the cindent matters)
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
 set tabstop=4
-set textwidth=80	" Maximum line width
+" set textwidth=80	" Maximum line width
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
 set undofile " Persistent Undo.
