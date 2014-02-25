@@ -224,4 +224,4 @@ autocmd BufReadPost *
   \ endif
 
 set list                " show special characters
-set listchars=tab:»·,trail:·,nbsp:·,eol:¸
+set listchars=tab:»·,trail:·,nbsp:·
