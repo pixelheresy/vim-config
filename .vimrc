@@ -16,8 +16,10 @@ filetype off
 " Local dirs
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set undodir=~/.vim/undo
-
+if has('persistent_undo')
+	set undodir=~/.vim/undo
+	set undofile " Persistent Undo.
+endif
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
@@ -65,7 +67,6 @@ set tabstop=4
 " set textwidth=80	" Maximum line width
 set title " Show the filename in the window titlebar.
 set ttyfast " Send more characters at a given time.
-set undofile " Persistent Undo.
 set viminfo='0,\"100,	" Stay at the start of a file when opening it
 set whichwrap+=<,>,h,l,[,] " Allows for left/right keys to wrap across lines
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion).
