@@ -6,7 +6,12 @@ set t_Co=256
 set background=dark
 syntax on
 colorscheme molokai
-
+if has("gui_running")
+   let s:uname = system("uname")
+   if s:uname == "Darwin\n"
+      set guifont=Inconsolata-dz\ for\ Powerline:h11
+   endif
+endif
 " Enabled later, after package manager
 filetype off
 
@@ -32,10 +37,10 @@ set esckeys " Allow cursor keys in insert mode.
 set fileformat=unix	" No crazy CR/LF
 set foldcolumn=1 " Column to show folds
 set foldenable
-set foldlevel=2
-set foldmethod=syntax " Markers are used to specify folds.
+set foldlevel=9
+set foldmethod=indent " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
-set foldnestmax=3 " Set max fold nesting level
+set foldnestmax=10 " Set max fold nesting level
 set formatoptions=
 set formatoptions+=c " Format comments
 set formatoptions+=r " Continue comments by default
@@ -54,7 +59,7 @@ set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join
 set number
 set ruler		" Show the line position at the bottom of the window
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
-set shell=/bin/sh " Use /bin/sh for executing shell commands
+set shell=/bin/bash " Use /bin/sh for executing shell commands
 set shiftwidth=4 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
 set showcmd		" Show partially typed commands
@@ -63,6 +68,8 @@ set sidescrolloff=3 " Start scrolling three columns before vertical border of wi
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
 set smartindent		" Indent settings (really only the cindent matters)
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
 set tabstop=4
 " set textwidth=80	" Maximum line width
 set title " Show the filename in the window titlebar.
@@ -85,17 +92,18 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'msanders/snipmate.vim.git'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'sjl/threesome.vim.git'
 Bundle 'mklabs/grunt.vim.git'
+Bundle 'chrisbra/vim-show-whitespace'
 
 filetype plugin indent on
 
-let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
 let g:vim_markdown_folding_disabled=1
 
 " Speed up transition from modes
@@ -114,8 +122,8 @@ nnoremap <C-y> 3<C-y>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
+  map + <C-w>+
+  map - <C-w>-
 endif
 
 " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
@@ -167,6 +175,10 @@ map <Leader>, <C-^>
 " :map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
 
+map <Leader>tt :tabedit<CR>
+map <Leader>t<Space> :tabedit 
+map <Leader>tb :tab ball<CR>
+
 " Yank from cursor to end of line
 nnoremap Y y$
 
@@ -177,7 +189,7 @@ map <leader><Enter> o<ESC>
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
 " Remap ^A to ^K for adding
-map <C-k> <C-a>
+" map <C-k> <C-a>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace ()
@@ -197,13 +209,17 @@ noremap <leader>ss :call StripWhitespace ()<CR>
 nnoremap J mjJ`j
 
 " Toggle folds (<Space>)
-nnoremap <silent> <space> :exe 'silent! normal! '.((foldclosed('.')>0)? 'zMzx' : 'zc')<CR>
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 " Fix page up and down
 map <PageUp> <C-U>
 map <PageDown> <C-D>
 imap <PageUp> <C-O><C-U>
 imap <PageDown> <C-O><C-D>
+
+"NERDtree
+map <C-n> :NERDTreeToggle<CR>
 
 " Jumping to tags. (via Steve Losh)
 "
@@ -223,5 +239,5 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-set list                " show special characters
-set listchars=tab:»·,trail:·,nbsp:·
+" set list                " show special characters
+" set listchars=tab:»·,trail:·,nbsp:·
