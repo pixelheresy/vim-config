@@ -27,5 +27,5 @@
 	path = bundle/grunt.vim
 	url = git://github.com/mklabs/grunt.vim.git
 [submodule "bundle/vim-show-whitespace"]
-	path = budle/vim-show-whitespace
+	path = bundle/vim-show-whitespace
 	url = git://github.com/chrisbra/vim-show-whitespace.git
