@@ -2,9 +2,6 @@
 	path = bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
 	ignore = dirty
-[submodule "bundle/vim-fugative"]
-	path = bundle/vim-fugative
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -29,3 +26,6 @@
 [submodule "bundle/vim-show-whitespace"]
 	path = bundle/vim-show-whitespace
 	url = git://github.com/chrisbra/vim-show-whitespace.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

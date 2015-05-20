@@ -100,6 +100,7 @@ Bundle 'plasticboy/vim-markdown.git'
 Bundle 'sjl/threesome.vim.git'
 Bundle 'mklabs/grunt.vim.git'
 Bundle 'chrisbra/vim-show-whitespace'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 
@@ -175,8 +176,9 @@ map <Leader>, <C-^>
 " :map <Leader>[ :bprev<CR>
 map <Leader>ls :buffers<CR>
 
-map <Leader>tt :tabedit<CR>
-map <Leader>t<Space> :tabedit 
+map <Leader>tn :tabnew<CR>
+map <Leader>te :tabedit 
+map <Leader>tc :tabclose<CR>
 map <Leader>tb :tab ball<CR>
 
 " Yank from cursor to end of line
@@ -220,6 +222,11 @@ imap <PageDown> <C-O><C-D>
 
 "NERDtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+"GitGutter
+let g:gitgutter_realtime = 750
+let g:gitgutter_eager = 1000
 
 " Jumping to tags. (via Steve Losh)
 "
